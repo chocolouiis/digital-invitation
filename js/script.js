@@ -1,9 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // ... (existing DOM elements and page transition logic) ...
+    // --- DOM Elements ---
+    const loadingPage = document.getElementById('loading-page');
+    const codeInputPage = document.getElementById('code-input-page');
+    const invitationPage = document.getElementById('invitation-page');
 
-    const starsContainer = document.querySelector('.stars-container');
+    const codeInput = document.getElementById('code-input');
+    const submitCodeBtn = document.getElementById('submit-code-btn'); // Make sure this line is present and correct
+    const errorMessage = document.getElementById('error-message');
 
-    let allInvitationData = []; // To store all invitations from data.json
+    // ... (rest of your script.js code) ...
+});
 
     // --- Page Transition Logic ---
     function showPage(pageToShow) {
@@ -142,4 +148,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     initializeApp(); // Run the initialization
+
 });
