@@ -1,0 +1,37 @@
+{
+  "invitations": [
+    {
+      "code": "1001",
+      "gender": "male",
+      "teacherName": "ဦးစိုင်းစိုင်း",
+      "zoomPasscode": "1234",
+      "additionalInfo": {
+        "date": "04/10/2025",
+        "time": "00:00",
+        "id": "XXX XXX XXX"
+      }
+    },
+    {
+      "code": "1002",
+      "gender": "female",
+      "teacherName": "ဒေါ်နီလာ",
+      "zoomPasscode": "1234",
+      "additionalInfo": {
+        "date": "04/10/2025",
+        "time": "00:00",
+        "id": "XXX XXX XXX"
+      }
+    },
+    {
+      "code": "1003",
+      "gender": "male",
+      "teacherName": "ဆရာမောင်မောင်",
+      "zoomPasscode": "1234",
+      "additionalInfo": {
+        "date": "04/10/2025",
+        "time": "00:00",
+        "id": "XXX XXX XXX"
+      }
+    }
+  ]
+}

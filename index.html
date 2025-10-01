@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Digital Invitation</title>
+    <!-- Favicon (optional, but good practice) -->
+    <link rel="icon" href="assets/images/full-moon.png" type="image/png">
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Telegram Mini App SDK (only if needed for specific TWA features, otherwise can be removed for pure website) -->
+    <!-- <script src="https://unpkg.com/@telegram-apps/sdk@1.0.0/dist/index.iife.js"></script> -->
+</head>
+<body>
+
+    <!-- Background for all pages -->
+    <div class="background-container">
+        <!-- Stars will be dynamically added here by JavaScript -->
+        <div class="stars-container"></div>
+    </div>
+
+    <!-- Page 1: Loading Screen -->
+    <div id="loading-page" class="page active">
+        <img src="assets/images/background.jpg" alt="Background" class="page-background-img">
+        <div class="loading-content">
+            <img src="assets/gifs/loading-moon.gif" alt="Loading Moon" class="loading-moon-gif">
+            <p class="loading-text english-text">loading...</p>
+        </div>
+    </div>
+
+    <!-- Page 2: Code Input Screen -->
+    <div id="code-input-page" class="page">
+        <img src="assets/images/background.jpg" alt="Background" class="page-background-img">
+        <div class="code-input-content">
+            <img src="assets/gifs/half-moon.gif" alt="Half Moon" class="half-moon-gif">
+            <div class="input-container">
+                <input type="text" id="code-input" placeholder="Type the code..." class="professional-input english-text">
+                <button id="submit-code-btn" class="submit-button">
+                    <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            <p id="error-message" class="error-text english-text"></p>
+        </div>
+    </div>
+
+    <!-- Page 3: Invitation View Screen -->
+    <div id="invitation-page" class="page">
+        <img src="assets/images/background.jpg" alt="Background" class="page-background-img">
+        <div class="invitation-content">
+            <img src="assets/images/full-moon.png" alt="Full Moon" class="full-moon-img">
+            <h1 class="invitation-title myanmar-text-title">အာစရိယပူဇော်ပွဲ ဖိတ်ကြားလွှာ</h1>
+            <p class="greeting-text myanmar-text-normal">ချစ်ခင်လေးစားရပါသော <span id="teacher-gender"></span> <span id="teacher-name"></span> ခင်ဗျာ...</p>
+
+            <p class="invitation-body-paragraph myanmar-text-normal">
+                “အသိပညာ၏ အလင်းရောင်ဖြင့် ကျွန်ုပ်တို့၏ ဘဝခရီးလမ်းကို ထွန်းလင်းပေးခဲ့
+                သော ဆရာ၊ ဆရာမများ၏ မေတ္တာ၊ ကရုဏာနှင့် ပညာပေးဆပ်မှုများသည်
+                တိုင်းတာ၍မရနိုင်သော ဂုဏ်ကျေးဇူးများဖြစ်ပါသည်။”
+            </p>
+            <p class="invitation-body-paragraph myanmar-text-normal">
+                ဤကဲ့သို့ ကြီးမြတ်လှသော ဆရာ၊မတို့၏ ဂုဏ်ကျေးဇူးကို အောက်မေ့ကျေးဇူးဆပ်
+                သောအားဖြင့် ဖီးနစ်နွေးဦးအထက်တန်းကျောင်းမှ တပည့်သားသမီးများသည်
+                သီတင်းကျွတ်အခါသမယနှင့်အတူ အာစရိယပူဇော်ပွဲလေးတစ်ခုကို
+                ကျင်းပပြုလုပ်ရန် စီစဉ်ထားရှိပါသည်။
+            </p>
+            <p class="invitation-body-paragraph myanmar-text-normal">
+                ထိုပူဇော်ပွဲသို့ ဆရာ၊ ဆရာမများမှ အချိန်ပေး၍ ကြွရောက်ချီးမြှင့်ပါရန် လေးစားစွာ
+                ဖိတ်ကြားအပ်ပါသည်။ ဆရာ၊မတို့၏ တန်ဖိုးရှိလှသော ပညာအမွေသည်သာ
+                ကျွန်တော်တို့၏ ဘဝခရီးအတွက် အခိုင်မာဆုံးအုတ်မြစ် ဖြစ်ပါကြောင်း
+                အလေးအနက်ထား ပြောကြားအပ်ပါသည်။
+            </p>
+
+            <div class="details-section">
+                <div class="left-details">
+                    <p class="detail-item myanmar-text-normal"><span class="english-text">ရက်စွဲ - </span><span id="detail-date" class="english-text"></span></p>
+                    <p class="detail-item myanmar-text-normal"><span class="english-text">အချိန် - </span><span id="detail-time" class="english-text"></span></p>
+                    <p class="detail-item english-text">ID - <span id="detail-id"></span></p>
+                    <p class="detail-item english-text">Passcode - <span id="detail-passcode"></span></p>
+                </div>
+                <div class="right-details myanmar-text-normal">
+                    <p>ဖီးနစ်နွေးဦးအထက်တန်းကျောင်းမှ</p>
+                    <p>ကျောင်းသား၊သူများ</p>
+                </div>
+            </div>
+
+            <img src="assets/images/footage.png" alt="Footage" class="footage-img">
+        </div>
+    </div>
+
+    <!-- Link to your JavaScript file -->
+    <script src="js/script.js"></script>
+</body>
+</html>
